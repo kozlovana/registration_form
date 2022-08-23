@@ -1,4 +1,5 @@
 from selene import command, have
+from selene.support.jquery_style_selectors import s
 from selene.support.shared import browser
 
 from demoqa_tests.model.controls.checkbox import hobby_select
@@ -82,6 +83,11 @@ class StudentRegistrationForm:
     @staticmethod
     def submit():
         browser.element('#submit').perform(command.js.click)
+
+
+    @staticmethod
+    def close_dialog():
+        s('#closeLargeModal').perform(command.js.click)
 
 
 class ModalDialogSubmittingForm:
